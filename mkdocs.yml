@@ -1,0 +1,62 @@
+site_name: 효사랑치과 안내문
+site_url: https://naljahyun.github.io/hsdc-docs/
+site_description: 효사랑치과병원 환자용 안내 페이지
+
+repo_url: https://github.com/naljahyun/hsdc-docs
+repo_name: naljahyun/hsdc-docs
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+
+plugins:
+  - search
+  - table-reader:
+      data_path: docs/data
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - 홈: index.md
+  - 재증명서 발급 안내: certificates.md
+  - 재증명서 발급비용: certificate-fees.md
+  - 비급여 수가표: non-covered-fees.md
