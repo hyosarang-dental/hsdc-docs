@@ -65,6 +65,17 @@ body, .md-typeset {
   letter-spacing: -0.005em;
 }
 
+/* Page background — 헤더/사이드바는 흰색(surface), 본문만 세이지 크림 */
+.md-main,
+.md-container,
+.md-main__inner,
+.md-content {
+  background-color: var(--sg-bg);
+}
+.md-typeset {
+  background-color: transparent;
+}
+
 .md-typeset {
   font-size: 0.82rem;   /* ~14.8px */
   line-height: 1.75;
@@ -153,6 +164,26 @@ body, .md-typeset {
 .md-search__input::placeholder { color: var(--sg-muted); }
 [data-md-toggle=search]:checked~.md-header .md-search__form { background: var(--sg-surface); }
 
+/* ---- Header chrome 숭수각 제거 ---- */
+/* 다크모드 토글 (palette switcher) 숨김 */
+.md-header__option,
+.md-header [data-md-component="palette"] {
+  display: none !important;
+}
+
+/* 헤더 로고/아이콘 (이모지) 숨김 */
+.md-header__button.md-logo,
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  display: none !important;
+}
+
+/* GitHub 레포 링크 (상단 우측 저장소 정보) 숨김 */
+.md-header__source,
+.md-source {
+  display: none !important;
+}
+
 /* ---- Sidebar / Nav ---- */
 .md-sidebar {
   background-color: var(--sg-surface);
@@ -192,13 +223,13 @@ body, .md-typeset {
   color: var(--sg-accent-deep);
 }
 
-/* ---- Admonitions (기본 info 이모지 톤 제거 → 세이지 톤) ---- */
+/* ---- Admonitions (B안: 왼쪽 3px 액센트만, 나머지 윤곽선 없음) ---- */
 .md-typeset .admonition,
 .md-typeset details {
-  border: 1px solid var(--sg-border);
+  border: none;
   border-left: 3px solid var(--sg-accent);
   background: var(--sg-accent-soft);
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: none;
   font-size: 0.78rem;
   color: var(--sg-body);
@@ -220,15 +251,31 @@ body, .md-typeset {
   padding-left: 1rem;
 }
 
-/* Note/Tip/Warning 색 미세 조정 */
+/* Note/Tip/Info — 세이지 톤으로 통일 (B안) */
 .md-typeset .admonition.note,
-.md-typeset details.note { border-left-color: var(--sg-accent); }
+.md-typeset details.note,
+.md-typeset .admonition.tip,
+.md-typeset details.tip,
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-left-color: var(--sg-accent);
+  background: var(--sg-accent-soft);
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset .admonition.info > .admonition-title {
+  color: var(--sg-accent-deep);
+}
+
+/* Warning — 세이지 톤으로 통일 (계획대로) */
 .md-typeset .admonition.warning,
 .md-typeset details.warning {
-  border-left-color: #b89456;
-  background: #f7f0e2;
+  border-left-color: var(--sg-accent);
+  background: var(--sg-accent-soft);
 }
-.md-typeset .admonition.warning > .admonition-title { color: #7a5a1f; }
+.md-typeset .admonition.warning > .admonition-title {
+  color: var(--sg-accent-deep);
+}
 
 /* ---- Tabs (내용 탭) ---- */
 .md-typeset .tabbed-set { border-radius: 4px; }
@@ -256,13 +303,13 @@ body, .md-typeset {
   background: var(--sg-accent);
   color: #fff;
   border: 1px solid var(--sg-accent);
-  border-radius: 2px;
-  padding: 0.5rem 1.2rem;
+  border-radius: 3px;
+  padding: 0.55rem 1.3rem;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.005em;
   box-shadow: none;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 .md-typeset .md-button:hover {
   background: var(--sg-accent-deep);
@@ -339,12 +386,7 @@ body, .md-typeset {
   font-weight: 500;
 }
 
-/* 가격 열 — "원"으로 끝나는 셀 자동 우측 정렬
-   마크다운에서 | 17,610원 | 처럼 적으면 아래 셀렉터가 잡습니다.
-   더 확실히 하려면 수가표는 3열(가격) 정렬을 우측으로 지정하세요:
-      | 서류명 | 단위 | 비용 | 비고 |
-      |---|---|---:|---|
-*/
+/* 가격 열 — "비용" 컬럼은 뒤에서 2번째(note 바로 앞) */
 .md-typeset table:not([class]) th:nth-last-child(2),
 .md-typeset .fee-table th:nth-last-child(2),
 .md-typeset table:not([class]) td:nth-last-child(2),
@@ -352,14 +394,15 @@ body, .md-typeset {
   text-align: right;
   font-variant-numeric: tabular-nums;
   color: var(--sg-ink);
-  font-weight: 400;           /* V1: regular */
+  font-weight: 400;
   font-family: var(--sg-sans);
+  white-space: nowrap;
 }
 
-/* Zebra rows */
+/* Zebra rows — 원안 B2: 줄무달 없음 */
 .md-typeset table:not([class]) tbody tr:nth-child(even) td,
 .md-typeset .fee-table tbody tr:nth-child(even) td {
-  background: var(--sg-table-alt);
+  background: transparent;
 }
 
 /* Hover */
@@ -480,22 +523,58 @@ body, .md-typeset {
 }
 .md-typeset ul li::marker { color: var(--sg-muted); }
 
-/* 스크롤바 톤 */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-thumb { background: var(--sg-border-strong); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--sg-muted-soft); }
+/* ============================================================
+ * Key points \u2014 \ubc88\ud638 \uac15\uc870 \uc139\uc158 (\ucf5c\uc544\uc6c3 \ub300\uc548)
+ *
+ * \ub9c8\ud06c\ub2e4\uc6b4:
+ *   <div class="key-points" markdown>
+ *
+ *   **01. \uc81c\ubaa9**
+ *   \uc124\uba85 \ubb38\uc7a5...
+ *
+ *   **02. \uc81c\ubaa9**
+ *   ...
+ *   </div>
+ * ============================================================ */
+.md-typeset .key-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1rem 0 2rem;
+  padding: 1.4rem 0 0.4rem;
+  border-top: 1px solid var(--sg-border);
+}
+.md-typeset .key-points p {
+  margin: 0;
+  color: var(--sg-body);
+  line-height: 1.75;
+}
+.md-typeset .key-points p strong {
+  display: block;
+  font-family: var(--sg-serif);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--sg-ink);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.35rem;
+}
+/* \ubc88\ud638 (01., 02., 03.) \uc5d0\ub294 \uc138\ub9ac\ud504 + muted \ud1a4 \u2014 \uc800\ub3c4\ub85c \uad6c\ubd84 */
+.md-typeset .key-points p strong::first-letter {
+  /* noop \u2014 \uc804\uccb4 \ud68d\uc77c \uc2a4\ud0c0\uc77c\ub85c \uc788\uc5b4\uc57c \ud568 */
+}
 
-/* ---- Right TOC 컬럼 제거 ----
- * 페이지마다 .quick-jump 로 섹션 네비를 직접 제공하므로
- * Material 기본 오른쪽 목차는 숨기고 본문이 그 공간을 쓰도록 조정.
- */
+/* ---- \uc624\ub978\ucabd TOC \uc644\uc804 \uc81c\uac70 ---- */
 .md-sidebar--secondary {
   display: none !important;
 }
-
 @media screen and (min-width: 76.25em) {
   .md-main__inner > .md-content {
     max-width: 48rem;
     margin-right: auto;
   }
 }
+
+/* 스크롤바 톤 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--sg-border-strong); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sg-muted-soft); }

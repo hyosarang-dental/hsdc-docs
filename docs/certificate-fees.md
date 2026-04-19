@@ -25,23 +25,22 @@
      아래처럼 필요한 섹션만 read_csv 로 불러옵니다.
      ============================================================ -->
 
-## 진단서 { .fee-section data-count="8" }
+## 진단서 { .fee-section }
 
 {{ read_csv('data/fees_진단서.csv') }}
 
-## 영상·기록 사본 { .fee-section data-count="5" #영상기록-사본 }
+## 영상·기록 사본 { .fee-section}
 
 {{ read_csv('data/fees_영상기록사본.csv') }}
 
-## 확인서 { .fee-section data-count="2" }
+## 확인서 { .fee-section }
 
 {{ read_csv('data/fees_확인서.csv') }}
 
-## 영수 관련 { .fee-section data-count="3" }
+## 영수 관련 { .fee-section }
 
 {{ read_csv('data/fees_영수관련.csv') }}
 
 ---
 
-!!! note "관련 안내"
-    서류 발급 절차 및 수령 방법은 [제증명서 발급 안내](certificates.md) 페이지에서 확인하실 수 있습니다.
+→ [제증명서 발급 안내](certificates.md) 페이지에서 서류 발급 절차를 확인하세요.
