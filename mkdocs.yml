@@ -41,6 +41,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details
@@ -51,6 +52,6 @@ markdown_extensions:
 
 nav:
   - 홈: index.md
-  - 제증명서 발급 안내: certificates.md
-  - 제증명서 발급비용: certificate-fees.md
+  - 치아보험 서류 발급 안내: certificates.md
+  - 제증명서 발급 비용: certificate-fees.md
   - 비급여 수가표: non-covered-fees.md
