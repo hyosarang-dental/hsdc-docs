@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: 안내 보기](certificates.md)
 
-- :material-cash-multiple:{ .lg .middle } &nbsp; **제증명서 발급비용**
+- :material-cash-multiple:{ .lg .middle } &nbsp; **제증명서 발급 비용**
 
     ---
 
