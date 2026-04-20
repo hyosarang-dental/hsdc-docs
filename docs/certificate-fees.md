@@ -27,19 +27,19 @@
 
 ## 진단서 { .fee-section }
 
-{{ read_csv('data/fees_진단서.csv') }}
+{{ read_csv('Diagnosis-Certificated.csv') }}
 
-## 영상·기록 사본 { .fee-section}
+## 영상·기록 사본 { .fee-section }
 
-{{ read_csv('data/fees_영상기록사본.csv') }}
+{{ read_csv('Record-Certificated.csv') }}
 
 ## 확인서 { .fee-section }
 
-{{ read_csv('data/fees_확인서.csv') }}
+{{ read_csv('Confirmation-Certificated.csv') }}
 
 ## 영수 관련 { .fee-section }
 
-{{ read_csv('data/fees_영수관련.csv') }}
+{{ read_csv('Receipt-Certificated.csv') }}
 
 ---
 
