@@ -1,9 +1,9 @@
 site_name: 효사랑치과 안내문
-site_url: https://naljahyun.github.io/hsdc-docs/
+site_url: https://doc.hyosarang.org
 site_description: 효사랑치과병원 환자용 안내 페이지
 
-repo_url: https://github.com/naljahyun/hsdc-docs
-repo_name: naljahyun/hsdc-docs
+repo_url: https://github.com/hyosarang-dental/hsdc-docs
+repo_name: hyosarang-dental/hsdc-docs
 
 theme:
   name: material
