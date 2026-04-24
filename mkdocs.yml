@@ -32,6 +32,7 @@ extra_css:
   - stylesheets/tokens.css
   - stylesheets/base.css
   - stylesheets/components.css
+  - stylesheets/home.css
   - stylesheets/fees.css
   - stylesheets/certificates.css
 
