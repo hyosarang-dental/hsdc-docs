@@ -47,8 +47,7 @@
 <div class="cta-card__label">ACTION</div>
 #### 서류 발급 사전 신청 { .cta-card__title }
 <p class="cta-card__desc">미리 신청하시면 내원 시 대기 시간을 단축할 수 있습니다.</p>
-[신청서 작성하기 →](#){ .cta-button }
-<span class="cta-card__note">사전 신청 링크는 준비 중입니다.</span>
+[카카오채널 문의하기 →](http://pf.kakao.com/_dPxcuxj/chat){ .cta-button }
 </div>
 
 <div class="cta-card" markdown>
