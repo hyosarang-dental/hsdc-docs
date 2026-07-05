@@ -30,7 +30,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Diagnosis-Certificated.csv') }}
+{{ read_csv('Certificated-Diagnosis.csv') }}
 
 </div>
 
@@ -38,7 +38,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Record-Certificated.csv') }}
+{{ read_csv('Certificated-Record.csv') }}
 
 </div>
 
@@ -46,7 +46,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Confirmation-Certificated.csv') }}
+{{ read_csv('Certificated-Confirmation.csv') }}
 
 </div>
 
@@ -54,7 +54,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Receipt-Certificated.csv') }}
+{{ read_csv('Certificated-Receipt.csv') }}
 
 </div>
 

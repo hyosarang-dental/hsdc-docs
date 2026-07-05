@@ -21,7 +21,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Implant-Noninsured.csv') }}
+{{ read_csv('Noninsured-Implant.csv') }}
 
 </div>
 
@@ -29,7 +29,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Prosthetic-Noninsured.csv') }}
+{{ read_csv('Noninsured-Prosthetic.csv') }}
 
 </div>
 
@@ -37,7 +37,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Conservative-Noninsured.csv') }}
+{{ read_csv('Noninsured-Conservative.csv') }}
 
 </div>
 
@@ -45,7 +45,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Denture-Noninsured.csv') }}
+{{ read_csv('Noninsured-Denture.csv') }}
 
 </div>
 
@@ -53,7 +53,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Pediatric-Noninsured.csv') }}
+{{ read_csv('Noninsured-Pediatric.csv') }}
 
 </div>
 
@@ -61,7 +61,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Orthodontic-Noninsured.csv') }}
+{{ read_csv('Noninsured-Orthodontic.csv') }}
 
 </div>
 
@@ -69,7 +69,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Other-Noninsured.csv') }}
+{{ read_csv('Noninsured-Other.csv') }}
 
 </div>
 
@@ -77,7 +77,7 @@
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Cosmetic-Taxable-Noninsured.csv') }}
+{{ read_csv('Noninsured-Cosmetic-Taxable.csv') }}
 
 </div>
 

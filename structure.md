@@ -21,8 +21,8 @@ hsdc-docs/
    ├─ certificate-fees.md
    ├─ non-covered-fees.md
    ├─ data/
-   │  ├─ *-Certificated.csv
-   │  ├─ *-Noninsured.csv
+   │  ├─ Certificated-*.csv
+   │  ├─ Noninsured-*.csv
    │  └─ certificate-fees.csv
    ├─ javascripts/
    │  └─ fee-count.js
@@ -80,7 +80,7 @@ extra_css:
 
 <div class="fee-table" markdown>
 
-{{ read_csv('Diagnosis-Certificated.csv') }}
+{{ read_csv('Certificated-Diagnosis.csv') }}
 
 </div>
 ```
@@ -95,7 +95,7 @@ extra_css:
 
 ## 5. Data And Legacy Files
 
-현재 운영 데이터는 `docs/data/*-Certificated.csv`와 `docs/data/*-Noninsured.csv`입니다.
+현재 운영 데이터는 `docs/data/Certificated-*.csv`와 `docs/data/Noninsured-*.csv`입니다.
 
 정리 후보:
 
