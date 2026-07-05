@@ -131,3 +131,36 @@ extra_css:
 - 생성된 `site/` 디렉터리를 GitHub Pages artifact로 업로드하고 Pages에 배포합니다.
 
 GitHub 저장소 설정에서 Pages source는 GitHub Actions로 지정되어 있어야 합니다.
+
+## 8. Latest Handoff Notes
+
+2026-07-05 기준 최신 상태:
+
+- 운영 사이트는 `https://doc.hyosarang.org/`입니다.
+- `github` remote는 `git@github.com:hyosarang-dental/hsdc-docs.git`입니다.
+- `clinic` remote는 `git@gitea:head/hsdc-docs.git`입니다.
+- GitHub Pages는 GitHub Actions workflow 방식으로 배포됩니다.
+- 최근 배포 커밋은 `e8889e2 docs: CSV 파일명 체계 변경`입니다.
+- 해당 커밋은 GitHub와 clinic 양쪽 원격에 push 완료되었습니다.
+- GitHub Actions 배포 run id `28736770532`가 성공했습니다.
+
+최근 변경:
+
+- `docs/index.md` 안내 문구를 수정했습니다.
+- CSV 파일명을 `세부내용-큰내용.csv`에서 `큰내용-세부내용.csv`로 바꿨습니다.
+- 운영 CSV는 `Certificated-*.csv`, `Noninsured-*.csv` 패턴을 사용합니다.
+- `docs/certificate-fees.md`, `docs/non-covered-fees.md`의 `read_csv()` 참조도 새 파일명으로 맞췄습니다.
+- 사용자가 수정한 제증명 CSV 내용도 함께 배포되었습니다.
+
+다음에 이어서 할 수 있는 작업:
+
+- 원내 게시물 제작을 위해 Canva에 올릴 QR 이미지 세트를 만듭니다.
+- 권장 QR 연결 대상:
+  - 전체 안내: `https://doc.hyosarang.org/`
+  - 치아보험 서류 안내: `https://doc.hyosarang.org/certificates/`
+  - 제증명서 발급 비용: `https://doc.hyosarang.org/certificate-fees/`
+  - 비급여 수가표: `https://doc.hyosarang.org/non-covered-fees/`
+- 장기 유지보수를 위해 `/qr/fees/`, `/qr/certificates/` 같은 중간 주소 페이지를 만든 뒤 QR이 그 주소를 가리키게 할 수 있습니다.
+- 포스터 문구 후보:
+  - "비급여 진료비와 제증명서 발급 비용은 QR로 확인해 주세요."
+  - "최신 비용 안내는 온라인 안내 페이지에서 확인하실 수 있습니다."
